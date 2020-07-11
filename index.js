@@ -1,14 +1,14 @@
-const express = require("express");
+const express = require("express")
 const passport = require('passport')
 const Boom = require('@hapi/boom')
 const cookieParser = require('cookie-parser')
 const axios = require('axios')
-const { config } = require("./config");
+const { config } = require("./config")
 
-const app = express();
+const app = express()
 
 // body parser
-app.use(express.json());
+app.use(express.json())
 app.use(cookieParser())
 
 // Basic strategy
@@ -37,7 +37,7 @@ app.post("/auth/sign-in", async function(req, res, next) {
       next(err)
     }
   })(req, res, next)
-});
+})
 
 app.post("/auth/sign-up", async function(req, res, next) {
   const { body: user } = req
@@ -51,11 +51,11 @@ app.post("/auth/sign-up", async function(req, res, next) {
   }catch(err){
     next(err)
   }
-});
+})
 
 app.get("/movies", async function(req, res, next) {
 
-});
+})
 
 app.post("/user-movies", async function(req, res, next) {
   try{
@@ -74,7 +74,7 @@ app.post("/user-movies", async function(req, res, next) {
   }catch(err){
     next(err)
   }
-});
+})
 
 app.delete("/user-movies/:userMovieId", async function(req, res, next) {
   try{
@@ -92,7 +92,7 @@ app.delete("/user-movies/:userMovieId", async function(req, res, next) {
   }catch(err){
     next(err)
   }
-});
+})
 
 app.get(
   '/auth/google-oauth',
@@ -116,5 +116,5 @@ app.get(
 )
 
 app.listen(config.port, function() {
-  console.log(`Listening http://localhost:${config.port}`);
-});
+  console.log(`Listening http://localhost:${config.port}`)
+})
