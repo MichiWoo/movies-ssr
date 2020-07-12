@@ -1,4 +1,5 @@
 const express = require("express")
+const helmet = require('helmet')
 const passport = require('passport')
 const Boom = require('@hapi/boom')
 const cookieParser = require('cookie-parser')
@@ -9,6 +10,10 @@ const app = express()
 
 // body parser
 app.use(express.json())
+
+// Helmet para la seguridad de los http
+app.use(helmet())
+
 app.use(cookieParser())
 
 // Basic strategy
