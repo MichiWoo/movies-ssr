@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hapi/boom": "^9.1.0",
+    "@hapi/boom": "^9.1.1",
     "axios": "^0.19.2",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.0.0",
